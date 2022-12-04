@@ -1,0 +1,117 @@
+{% extends 'main.html' %} {% block content %} 
+
+<div class="container">
+    <div class="layout__box_startupProfile">
+      <div class="layout__boxHeader">
+        <div class="layout__boxTitle">
+          <h3>Create Startup Profile</h3>
+        </div>
+      </div>
+      <div class="layout__body">
+
+        <form class="form" action="#" method="POST">
+          {% csrf_token %}
+          <div class="form__group">
+            <label for="startup_desc">Startup description</label>
+            <textarea class="form-control" id="startup_desc" rows="3"></textarea>
+          </div>
+          <div class="form__group">
+            <label for="team_desc">Team description</label>
+            <textarea class="form-control" id="team_desc" rows="3"></textarea>
+          </div>
+          <div class="form__group">
+            <label for="founder">Founder</label>
+            <input id="founder" name="founder" type="text" />
+          </div>
+          <div class="form__group">
+            <label for="cofounder">Co-founders</label>
+            <textarea class="form-control" id="cofounder" rows="3"></textarea>
+          </div>
+          <div style="margin: 25px auto;">
+            <label for="team_count">Number of team members</label>
+            <input class="number" id="team_count" name="team_count" type="number" placeholder="1" min = '1' />
+          </div>
+          <div class="form__group">
+            <label for="incorporation_type">Type of incorporation</label>
+            <input id="incorporation_type" name="incorporation_type" type="text"/>
+          </div>
+          <div class="form__group">
+            <label for="legal_entity">Name of the legal entity</label>
+            <input id="legal_entity" name="legal_entity" type="text" />
+          </div>
+          <div class="form__group">
+            <label for="directors_partners">Directors/Partners</label>
+            <textarea class="form-control" id="directors_partners" rows="3"></textarea>
+          </div>
+          <div class="form__radio" style="margin-bottom:2rem">
+            <p>Funding Status</p>
+            <input type="radio" id="pending" name="funding_status" value="pending">
+            <label for="pending">Pending</label><br>
+            <input type="radio" id="complete" name="funding_status" value="complete">
+            <label for="complete">Completed</label><br>
+          </div>
+          <div class="form__group">
+            <label for="funding_req">Funding requirements</label>
+            <textarea class="form-control" id="funding_req" rows="3"></textarea>
+          </div>
+          <div class="form__group">
+            <label for="reg_address">Registered address</label>
+            <textarea class="form-control" id="reg_address" rows="3"></textarea>
+          </div>
+          <div class="form__group">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" />
+          </div>
+          <div class="form__group">
+            <label for="sml">Social Media Links</label>
+            <textarea class="form-control" id="sml" rows="3"></textarea>
+          </div>
+          <div class="form__group">
+            <label for="founder_res_address">Founder's residential address</label>
+            <textarea class="form-control" id="founder_res_address" rows="3"></textarea>
+          </div>
+          <div class="form__group">
+            <label for="founder_contact_no">Founder's contact number</label>
+            <input type="text" name="founder_contact_no" id="founder_contact_no"></input>
+          </div>
+          <div class="form__group">
+            <label for="sec_contact_num">Secondary contact number</label>
+            <input type="text" name="sec_contact_num" id="sec_contact_num"></input>
+          </div>
+          <div class="form__group">
+            <label for="founder_email_address">Founder's email address</label>
+            <input type="text" name="founder_email_address" id="founder_email_address"></input>
+          </div>
+          <div class="form__group">
+            <label for="pan">PAN</label>
+            <input type="text" name="pan" id="pan"></input>
+          </div>
+          <div class="form__group">
+            <label for="bank_name">Name of Bank</label>
+            <input type="text" name="bank_name" id="bank_name"></input>
+          </div>
+          <div class="form__group">
+            <label for="bank_account_num">Bank account number</label>
+            <input type="text" name="bank_account_num" id="bank_account_num"></input>
+          </div>
+          <div class="form__group">
+            <label for="ifsc">IFSC Code</label>
+            <input type="text" name="ifsc" id="ifsc"></input>
+          </div>
+          <div class="form__group">
+            <label for="facilities">Facilities Required</label>
+            <textarea class="form-control" id="facilities" rows="3"></textarea>
+          </div>
+          <div style="margin: 25px auto;">
+            <label for="utility_count">Frequency of utility</label>
+            <input class="number"id="utility_count" name="utility_count" type="number" placeholder="1" min = '1' />
+          </div>
+          <button class="btn btn--main" type="submit" style="margin-top:30px">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

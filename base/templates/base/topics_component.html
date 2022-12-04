@@ -1,0 +1,20 @@
+        <div class="topics">
+          {% if request.user.is_superuser %}
+          <div class="topics__header">
+            <h2>Status</h2>
+          </div>
+          <ul class="topics__list">
+
+            {%for topic in topics %}
+            <li>
+              <a href="{% url 'home' %}?q={{topic.name | urlencode }}">{{topic.name}} <span>{{topic.room_set.all.count}}</span></a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+
+
+
+

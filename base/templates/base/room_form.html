@@ -1,0 +1,72 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+  <main class="create-room layout">
+    <div class="container">
+      <div class="layout__box">
+        <div class="layout__boxHeader">
+          <div class="layout__boxTitle">
+            <a href="{% url 'home' %}">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <title>arrow-left</title>
+                <path
+                  d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                </path>
+              </svg>
+            </a>
+
+            {% if request.user.is_superuser %}
+            <h3>Change Status</h3>
+            {% else %}
+            <h3>Add your idea</h3>
+            {% endif %}
+          </div>
+        </div>
+        <div class="layout__body">
+          <form class="form" action="" method="POST">
+            {% csrf_token %}
+
+            {% if request.user.is_superuser %}
+            <div class="form__group">
+              <label for="room_topic">Status</label>
+              <input required type="text" name="topic" id="room_topic" list="topic-list" />
+              <datalist id="topic-list">
+                <select id="room_topic">
+                  <option value="PENDING">
+                  <option value="REJECTED">
+                  <option value="ACCEPTED">
+                  <option value="FUNDED">
+                </select>
+              </datalist>
+            
+            {% else %}
+
+            <div class="form__group">
+              <label for="room_name">Startup Name</label>
+                {{form.name}}
+            </div>
+
+            <div class="form__group">
+              <label for="room_description">Idea</label>
+                {{form.description}}
+            </div>
+              
+            {% endif %}
+
+            </div>
+
+            <div class="form__action">
+              <a class="btn btn--dark" href="javascript:;" onclick="history.back()">Cancel</a>
+              <button class="btn btn--main" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% endblock %}

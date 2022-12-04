@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"c:\\Users\\91981\\OneDrive\\Desktop\\ran\\cfg_gusec\\cccpppp\\a.py","tests":[{"id":1670058908814,"input":"2\n9 94\nCODESTARS\n7 50\nCONSIZE","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\91981\\OneDrive\\Desktop\\ran\\cfg_gusec\\cccpppp\\a.py","group":"local","local":true}
